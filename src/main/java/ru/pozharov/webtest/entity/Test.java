@@ -12,6 +12,7 @@ public class Test {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @Column(columnDefinition = "text")
     private String text;
 
     public String getText() {

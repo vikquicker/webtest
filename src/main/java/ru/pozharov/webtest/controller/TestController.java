@@ -16,12 +16,12 @@ public class TestController {
     }
 
     @GetMapping("/")
-    public String testsPage(Model model){
+    public String tests(Model model){
         model.addAttribute("tests", testService.getAll());
         return "tests";
     }
 
-    @PostMapping("/create/text")
+    @PostMapping("/create/test")
     public String createTest(Test test){
         testService.save(test);
         return "redirect:/";

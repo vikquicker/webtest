@@ -1,29 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>WebTest</title>
-</head>
-<body>
-<h1>WebTest</h1>
-<hr>
-<form action="/create/test" method="post">
-    Название: <input type="text" name="name"/>
-    <br><br>
-    Текст:  <input type="text" name="text"/>
-    <br><br>
-    <button type="submit">Создать</button>
-</form>
-<hr>
-<h3>Все тесты на сайте</h3>
-<#list tests as test>
-    <div>
-    <p>
-        <strong>${test.name}</strong>
-        <i>${test.text}</i>
-    </p>
-<#else >
-    <h4>Нет тестов!</h4>
+<#import "bloks/common.ftlh" as c>
+<@c.page>
+    <h1 style="text-align: center"><p style="color: aliceblue">Все тесты на сайте</p></h1>
+    <hr>
+    <form style="text-align: center" action="/create/test" method="post">
+        <div class="form-group">
+            <label for="name">Название теста</label>
+            <input type="text" required class="form-control" id="name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="text">Текст</label>
+            <input type="text" required maxlength="10000" class="form-control" id="text" name="text">
+        </div>
+        <button type="submit" class="btn btn-dark">Подтвердить</button>
+    </form>
+    <hr>
+
+    <div class="card-columns">
+        <#list tests as test>
+            <div class="card text-white bg-secondary">
+                <div class="card-body">
+                    <h5 class="card-title">${test.name}</h5>
+                    <p class="card-text">${test.text}</p>
+                </div>
+            </div>
+        <#else>
+            <h1 style="text-align: center">Тестов не найдено</h1>
+        </#list>
     </div>
-</#list>
-</body>
-</html>
+</@c.page>
