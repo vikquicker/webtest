@@ -14,6 +14,17 @@ public class Test {
     private String name;
     @Column(columnDefinition = "text")
     private String text;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn
+    private Image image;
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
+    }
 
     public String getText() {
         return text;
