@@ -12,12 +12,11 @@ public class Test {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    @Column(columnDefinition = "text")
+//    @Column(columnDefinition = "text")
     private String text;
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn
     private Image image;
-
     public Image getImage() {
         return image;
     }

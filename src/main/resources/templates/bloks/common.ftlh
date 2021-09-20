@@ -19,6 +19,7 @@
     <div class="container mt-4">
         <#nested/>
     </div>
+    <#include "footer.ftlh"/>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
