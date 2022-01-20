@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import ru.pozharov.webtest.entity.Test;
+import ru.pozharov.webtest.models.Test;
 import ru.pozharov.webtest.facade.ImageFacade;
 import ru.pozharov.webtest.repository.TestRepository;
 
@@ -26,7 +26,7 @@ public class TestService {
         return testRepository.findAll();
     }
 
-    public void savePost(Test test, MultipartFile file) throws IOException {
+    public void saveTest(Test test, MultipartFile file) throws IOException {
         test.setImage(imageFacade.toEntity(file));
         log.info("Saving new Test with name: {}, text: {}",
                 test.getName(), test.getText());

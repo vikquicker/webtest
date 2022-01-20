@@ -2,7 +2,7 @@ package ru.pozharov.webtest.facade;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
-import ru.pozharov.webtest.entity.Image;
+import ru.pozharov.webtest.models.Image;
 
 import java.io.IOException;
 

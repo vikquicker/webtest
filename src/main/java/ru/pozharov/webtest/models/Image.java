@@ -1,4 +1,4 @@
-package ru.pozharov.webtest.entity;
+package ru.pozharov.webtest.models;
 
 import javax.persistence.*;
 

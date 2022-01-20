@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import ru.pozharov.webtest.entity.Image;
-import ru.pozharov.webtest.entity.Test;
-import ru.pozharov.webtest.facade.ImageFacade;
+import ru.pozharov.webtest.models.Image;
+import ru.pozharov.webtest.models.Test;
 import ru.pozharov.webtest.service.ImageService;
 import ru.pozharov.webtest.service.TestService;
 
@@ -46,9 +45,15 @@ public class TestController {
         return "myTests";
     }
 
+    @PostMapping("/results")
+    public String results(Test test) {
+
+        return "results";
+    }
+
     @PostMapping("/create/test")
     public String createTest(Test test, @RequestParam("file") MultipartFile file) throws IOException {
-        testService.savePost(test, file);
+        testService.saveTest(test, file);
         return "redirect:/myTests";
     }
 

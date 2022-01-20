@@ -1,7 +1,7 @@
 package ru.pozharov.webtest.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.pozharov.webtest.entity.Test;
+import ru.pozharov.webtest.models.Test;
 
 import java.util.List;
 

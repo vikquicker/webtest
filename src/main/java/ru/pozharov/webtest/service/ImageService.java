@@ -1,7 +1,7 @@
 package ru.pozharov.webtest.service;
 
 import org.springframework.stereotype.Service;
-import ru.pozharov.webtest.entity.Image;
+import ru.pozharov.webtest.models.Image;
 import ru.pozharov.webtest.repository.ImageRepository;
 
 @Service
