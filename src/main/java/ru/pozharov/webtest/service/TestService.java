@@ -26,6 +26,10 @@ public class TestService {
         return testRepository.findAll();
     }
 
+    public List<Test> getById() {
+        return testRepository.f
+    }
+
     public void saveTest(Test test, MultipartFile file) throws IOException {
         test.setImage(imageFacade.toEntity(file));
         log.info("Saving new Test with name: {}, text: {}",

@@ -12,7 +12,6 @@ public class Test {
     private Long id;
     private String name;
     private String text;
-    
     private boolean checkBox1Ofquiestion1,checkBox2Ofquiestion1,checkBox3Ofquiestion1,checkBox4Ofquiestion1,checkBox5Ofquiestion1;
     @Column(columnDefinition = "text")
     private String answer1Ofquestion1,answer2Ofquestion1,answer3Ofquestion1,answer4Ofquestion1,answer5Ofquestion1;

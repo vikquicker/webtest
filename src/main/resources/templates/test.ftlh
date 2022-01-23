@@ -5,13 +5,13 @@
     <div style="text-align: center">
         <img  src="/image/${test.image.id}" style="height: 200px">
     </div>
-    <hr>
-    <h3 style="text-align: center">${test.name}</h3>
-    <hr>
-    <p style="text-align: center">${test.text}</p>
-    <hr>
     <form style="text-align: left" action="/results" method="post" enctype="multipart/form-data">
+        <input type="hidden" value="${test.id}" id="idOfTest" name="idOfTest">
+        <hr>
         <h3 style="text-align: center">${test.name}</h3>
+        <hr>
+        <p style="text-align: center">${test.text}</p>
+        <hr>
     <#if (test.question1?length>0)>
         <div style="text-align: left">
             <strong>1 Вопрос</strong>
@@ -22,32 +22,32 @@
         </div>
         <br>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">
+            <input class="form-check-input" type="checkbox" id="check1Ofquestion1" name="check1Ofquestion1" onclick="true">
+            <label class="form-check-label" for="check1Ofquestion1">
                 ${test.answer1Ofquestion1}
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">
+            <input class="form-check-input" type="checkbox" id="check2Ofquestion1" name="check2Ofquestion1" onclick="true">
+            <label class="form-check-label" for="check2Ofquestion1">
                 ${test.answer2Ofquestion1}
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">
+            <input class="form-check-input" type="checkbox" id="check3Ofquestion1" name="check3Ofquestion1" onclick="true">
+            <label class="form-check-label" for="check3Ofquestion1">
                 ${test.answer3Ofquestion1}
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">
+            <input class="form-check-input" type="checkbox" id="check4Ofquestion1" name="check4Ofquestion1" onclick="true">
+            <label class="form-check-label" for="check4Ofquestion1">
                 ${test.answer4Ofquestion1}
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">
+            <input class="form-check-input" type="checkbox" id="check5Ofquestion1" name="check5Ofquestion1" onclick="true">
+            <label class="form-check-label" for="check5Ofquestion1">
                 ${test.answer5Ofquestion1}
             </label>
         </div>
@@ -674,7 +674,7 @@
 
     <hr>
     <div style="text-align: center">
-        <button type="submit" class="btn btn-dark">Подтвердить</button>
+        <button type="submit" class="btn btn-success">Подтвердить</button>
     </div>
     </form>
 

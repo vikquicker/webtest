@@ -757,7 +757,7 @@
 
 
         <hr>
-        <button type="submit" class="btn btn-dark">Подтвердить</button>
+        <button type="submit" class="btn btn-success">Подтвердить</button>
     </form>
     <hr>
     
