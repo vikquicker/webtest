@@ -19,6 +19,7 @@ import ru.pozharov.webtest.service.TestService;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.math.BigDecimal;
 
 @Controller
 public class TestController {
@@ -71,21 +72,28 @@ public class TestController {
                 .contentType(MediaType.valueOf(image.getContentType()))
                 .body(new InputStreamResource(new ByteArrayInputStream(image.getBytes())));
     }
-//, @RequestParam boolean check2Ofquestion1,
-//    @RequestParam boolean check3Ofquestion1, @RequestParam boolean check4Ofquestion1,
-//    @RequestParam boolean check5Ofquestion1,
+
     @PostMapping("/results")
-    public String results(Long id,TestCheckBoxAnswers testCheckBoxAnswers, Model model) {
-        model.addAttribute("testCheckBoxAnswers",testCheckBoxAnswers);
+    public String results(TestCheckBoxAnswers testCheckBoxAnswers, Model model) {
+        Test test = testService.getById(testCheckBoxAnswers.getIdOfTest());
+        model.addAttribute("test", test);
+        model.addAttribute("testCheckBoxAnswers", testCheckBoxAnswers);
         testCheckBoxAnswersService.saveTestCheckBoxAnswers(testCheckBoxAnswers);
+
+        BigDecimal result = testCheckBoxAnswersService.calculateTest(test, testCheckBoxAnswers);
+        model.addAttribute("result", result);
 
         return "results";
     }
 
     @GetMapping("/test/{id}")
-    public String test(@PathVariable("id") Test test, Model model,TestCheckBoxAnswers testCheckBoxAnswers) {
+    public String test(@PathVariable("id") Test test, Model model, TestCheckBoxAnswers testCheckBoxAnswers, Double x) {
+        x = Math.random();
+        String random = x.toString();
+        model.addAttribute("random", random.substring(2, 8));
         model.addAttribute("test", test);
-        model.addAttribute("testCheckBoxAnswers",testCheckBoxAnswers);
+        model.addAttribute("testCheckBoxAnswers", testCheckBoxAnswers);
+
         return "test";
     }
 

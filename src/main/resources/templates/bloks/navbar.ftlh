@@ -23,5 +23,6 @@
             <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
         </form>
+        <button type="button" style="margin-left: 10px" onclick="window.location.href = '/login'">Вход</button>
     </div>
 </nav>

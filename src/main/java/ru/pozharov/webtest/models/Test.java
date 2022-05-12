@@ -1,7 +1,6 @@
 package ru.pozharov.webtest.models;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 
 
 @Entity
@@ -12,7 +11,14 @@ public class Test {
     private Long id;
     private String name;
     private String text;
-    private boolean checkBox1Ofquiestion1,checkBox2Ofquiestion1,checkBox3Ofquiestion1,checkBox4Ofquiestion1,checkBox5Ofquiestion1;
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User author;
+
+    @Column(columnDefinition = "text")
+    private String radioOfquiestion1,radioOfquiestion2,radioOfquiestion3,radioOfquiestion4,radioOfquiestion5,
+            radioOfquiestion6,radioOfquiestion7,radioOfquiestion8,radioOfquiestion9,radioOfquiestion10,
+            radioOfquiestion11,radioOfquiestion12,radioOfquiestion13,radioOfquiestion14,radioOfquiestion15;
     @Column(columnDefinition = "text")
     private String answer1Ofquestion1,answer2Ofquestion1,answer3Ofquestion1,answer4Ofquestion1,answer5Ofquestion1;
     @Column(columnDefinition = "text")
@@ -45,7 +51,7 @@ public class Test {
     private String answer1Ofquestion15,answer2Ofquestion15,answer3Ofquestion15,answer4Ofquestion15,answer5Ofquestion15;
     @Column(columnDefinition = "text")
     private String question1, question2, question3, question4,question5,question6,question7,question8,question9,
-            question10,question11,question12,question13,question14,question15,question16,question17,question18,question19,question20;
+            question10,question11,question12,question13,question14,question15;
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn
     private Image image;
@@ -82,44 +88,132 @@ public class Test {
         this.name = name;
     }
 
-    public boolean isCheckBox1Ofquiestion1() {
-        return checkBox1Ofquiestion1;
+    public User getAuthor() {
+        return author;
     }
 
-    public void setCheckBox1Ofquiestion1(boolean checkBox1Ofquiestion1) {
-        this.checkBox1Ofquiestion1 = checkBox1Ofquiestion1;
+    public void setAuthor(User author) {
+        this.author = author;
     }
 
-    public boolean isCheckBox2Ofquiestion1() {
-        return checkBox2Ofquiestion1;
+    public String getRadioOfquiestion1() {
+        return radioOfquiestion1;
     }
 
-    public void setCheckBox2Ofquiestion1(boolean checkBox2Ofquiestion1) {
-        this.checkBox2Ofquiestion1 = checkBox2Ofquiestion1;
+    public void setRadioOfquiestion1(String radioOfquiestion1) {
+        this.radioOfquiestion1 = radioOfquiestion1;
     }
 
-    public boolean isCheckBox3Ofquiestion1() {
-        return checkBox3Ofquiestion1;
+    public String getRadioOfquiestion2() {
+        return radioOfquiestion2;
     }
 
-    public void setCheckBox3Ofquiestion1(boolean checkBox3Ofquiestion1) {
-        this.checkBox3Ofquiestion1 = checkBox3Ofquiestion1;
+    public void setRadioOfquiestion2(String radioOfquiestion2) {
+        this.radioOfquiestion2 = radioOfquiestion2;
     }
 
-    public boolean isCheckBox4Ofquiestion1() {
-        return checkBox4Ofquiestion1;
+    public String getRadioOfquiestion3() {
+        return radioOfquiestion3;
     }
 
-    public void setCheckBox4Ofquiestion1(boolean checkBox4Ofquiestion1) {
-        this.checkBox4Ofquiestion1 = checkBox4Ofquiestion1;
+    public void setRadioOfquiestion3(String radioOfquiestion3) {
+        this.radioOfquiestion3 = radioOfquiestion3;
     }
 
-    public boolean isCheckBox5Ofquiestion1() {
-        return checkBox5Ofquiestion1;
+    public String getRadioOfquiestion4() {
+        return radioOfquiestion4;
     }
 
-    public void setCheckBox5Ofquiestion1(boolean checkBox5Ofquiestion1) {
-        this.checkBox5Ofquiestion1 = checkBox5Ofquiestion1;
+    public void setRadioOfquiestion4(String radioOfquiestion4) {
+        this.radioOfquiestion4 = radioOfquiestion4;
+    }
+
+    public String getRadioOfquiestion5() {
+        return radioOfquiestion5;
+    }
+
+    public void setRadioOfquiestion5(String radioOfquiestion5) {
+        this.radioOfquiestion5 = radioOfquiestion5;
+    }
+
+    public String getRadioOfquiestion6() {
+        return radioOfquiestion6;
+    }
+
+    public void setRadioOfquiestion6(String radioOfquiestion6) {
+        this.radioOfquiestion6 = radioOfquiestion6;
+    }
+
+    public String getRadioOfquiestion7() {
+        return radioOfquiestion7;
+    }
+
+    public void setRadioOfquiestion7(String radioOfquiestion7) {
+        this.radioOfquiestion7 = radioOfquiestion7;
+    }
+
+    public String getRadioOfquiestion8() {
+        return radioOfquiestion8;
+    }
+
+    public void setRadioOfquiestion8(String radioOfquiestion8) {
+        this.radioOfquiestion8 = radioOfquiestion8;
+    }
+
+    public String getRadioOfquiestion9() {
+        return radioOfquiestion9;
+    }
+
+    public void setRadioOfquiestion9(String radioOfquiestion9) {
+        this.radioOfquiestion9 = radioOfquiestion9;
+    }
+
+    public String getRadioOfquiestion10() {
+        return radioOfquiestion10;
+    }
+
+    public void setRadioOfquiestion10(String radioOfquiestion10) {
+        this.radioOfquiestion10 = radioOfquiestion10;
+    }
+
+    public String getRadioOfquiestion11() {
+        return radioOfquiestion11;
+    }
+
+    public void setRadioOfquiestion11(String radioOfquiestion11) {
+        this.radioOfquiestion11 = radioOfquiestion11;
+    }
+
+    public String getRadioOfquiestion12() {
+        return radioOfquiestion12;
+    }
+
+    public void setRadioOfquiestion12(String radioOfquiestion12) {
+        this.radioOfquiestion12 = radioOfquiestion12;
+    }
+
+    public String getRadioOfquiestion13() {
+        return radioOfquiestion13;
+    }
+
+    public void setRadioOfquiestion13(String radioOfquiestion13) {
+        this.radioOfquiestion13 = radioOfquiestion13;
+    }
+
+    public String getRadioOfquiestion14() {
+        return radioOfquiestion14;
+    }
+
+    public void setRadioOfquiestion14(String radioOfquiestion14) {
+        this.radioOfquiestion14 = radioOfquiestion14;
+    }
+
+    public String getRadioOfquiestion15() {
+        return radioOfquiestion15;
+    }
+
+    public void setRadioOfquiestion15(String radioOfquiestion15) {
+        this.radioOfquiestion15 = radioOfquiestion15;
     }
 
     public String getAnswer1Ofquestion1() {
@@ -722,45 +816,6 @@ public class Test {
         this.answer5Ofquestion15 = answer5Ofquestion15;
     }
 
-    public String getQuestion16() {
-        return question16;
-    }
-
-    public void setQuestion16(String question16) {
-        this.question16 = question16;
-    }
-
-    public String getQuestion17() {
-        return question17;
-    }
-
-    public void setQuestion17(String question17) {
-        this.question17 = question17;
-    }
-
-    public String getQuestion18() {
-        return question18;
-    }
-
-    public void setQuestion18(String question18) {
-        this.question18 = question18;
-    }
-
-    public String getQuestion19() {
-        return question19;
-    }
-
-    public void setQuestion19(String question19) {
-        this.question19 = question19;
-    }
-
-    public String getQuestion20() {
-        return question20;
-    }
-
-    public void setQuestion20(String question20) {
-        this.question20 = question20;
-    }
 
     public String getQuestion1() {
         return question1;

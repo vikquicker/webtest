@@ -10,6 +10,7 @@ import ru.pozharov.webtest.repository.TestRepository;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TestService {
@@ -26,8 +27,8 @@ public class TestService {
         return testRepository.findAll();
     }
 
-    public List<Test> getById() {
-        return testRepository.f
+    public Test getById(Long id) {
+        return testRepository.getOne(id);
     }
 
     public void saveTest(Test test, MultipartFile file) throws IOException {
