@@ -20,9 +20,14 @@
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
+            <input type="hidden" name="_csrf" value="${_csrf.token}">
             <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
         </form>
-        <button type="button" style="margin-left: 10px" onclick="window.location.href = '/login'">Вход</button>
+        <button type="button" style="margin-left: 10px" onclick="window.location.href = '/login'">Войти</button>
+        <form action="/logout" method="post">
+            <input type="hidden" name="_csrf" value="${_csrf.token}">
+            <button type="submit" style="margin-left: 10px">Выйти</button>
+        </form>
     </div>
 </nav>

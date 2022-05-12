@@ -7,7 +7,10 @@
             <p>Если вам надо протестировать человека, или несколько человек, проверить знания в какой либо области,<br>
                 но нет на это времени, просто создайте здесь тест, отправьте ссылку на него кандидатам, а потом просто<br>
             посмотрите его результат!</p>
-            <p><a class="btn btn-primary btn-lg" role="button">Войти</a> <a target="_blank" href="#" class="btn btn-lg btn-danger" role="button">Зарегистрироваться</a></p>
+            <p><a class="btn btn-primary btn-lg" role="button" onclick="window.location.href = '/login'">Войти</a>
+                <a target="_blank" href="#" class="btn btn-lg btn-danger" role="button" onclick="window.location.href = '/registration'"
+                >Зарегистрироваться</a>
+            </p>
         </div>
     </div>
 

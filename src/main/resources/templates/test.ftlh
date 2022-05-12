@@ -870,7 +870,7 @@
             <br>
         </#if>
 
-
+        <input type="hidden" name="_csrf" value="${_csrf.token}">
         <hr>
         <div style="text-align: center">
             <button type="submit" class="btn btn-success">Подтвердить</button>

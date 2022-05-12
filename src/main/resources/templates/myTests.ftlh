@@ -12,6 +12,7 @@
                         <h5 class="card-title">${test.name}</h5>
                         <p class="card-text">${test.text}</p>
                         <form action="/delete/test/${test.id}" method="post">
+                            <input type="hidden" name="_csrf" value="${_csrf.token}">
                             <button type="submit" class="btn btn-primary btn-danger">Удалить</button>
                         </form>
                     </div>

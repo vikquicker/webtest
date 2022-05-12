@@ -20,6 +20,7 @@ public class UserService {
         if (userRepository.findAllByEmail(user.getEmail()) != null){
             return false;
         }
+        user.setActive(true);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.getRoles().add(ERole.USER);
         userRepository.save(user);
